@@ -1,5 +1,5 @@
 #!/bin/sh
-for repo in Kotakjualan-Email  pemilo-admin  pemilo-candidate  pemilo-room  pemilo-vote  sqola-option  sqola-student; do
+for repo in Kotakjualan-Email  pemilo-admin  pemilo-candidate  pemilo-room  pemilo-vote  sqola-option  sqola-student pemilo-fadmin pemilo-fclient; do
     (
 	cd "${repo}"
 	
