@@ -14,7 +14,7 @@ while true; do
               npm i
 
               if [ $repo = pemilo-fclient ] | [ $repo = pemilo-fadmin ]; then
-                npm i && npm run-script build
+                npm run-script build
               fi
 
               pm2 restart "${repo}"
