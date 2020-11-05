@@ -9,10 +9,14 @@ while true; do
       git remote update && git status -uno | grep -q 'Your branch is behind' && changed=1
 
       if [ $changed = 1 ]; then
+
               git pull
+              npm i
+
               if [ $repo = pemilo-fclient ] | [ $repo = pemilo-fadmin ]; then
                 npm i && npm run-script build
               fi
+
               pm2 restart "${repo}"
               echo "${repo} service have been updated";
 
