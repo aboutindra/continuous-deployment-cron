@@ -10,14 +10,18 @@ while true; do
 
       if [ $changed = 1 ]; then
               git pull
-        pm2 restart "${repo}"
-              echo "${repo} service been updated" + " ( " + $(date) +" )";
+              if [ $repo = pemilo-fclient ] | [ $repo = pemilo-fadmin ]; then
+                npm i && npm run-script build
+                echo "Frontend"
+              fi
+              pm2 restart "${repo}"
+              echo "${repo} service have been updated";
+
       else
-            echo "${repo} Up-to-date"
+            echo "${repo} Up-to-date at "$(date);
       fi
     )
   done
 
   sleep 60
 done
-
