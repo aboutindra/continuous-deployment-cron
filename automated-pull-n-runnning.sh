@@ -12,7 +12,6 @@ while true; do
               git pull
               if [ $repo = pemilo-fclient ] | [ $repo = pemilo-fadmin ]; then
                 npm i && npm run-script build
-                echo "Frontend"
               fi
               pm2 restart "${repo}"
               echo "${repo} service have been updated";
